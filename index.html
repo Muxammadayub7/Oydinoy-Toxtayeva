@@ -41,7 +41,7 @@
     .hero {
       max-width: 390px;
       width: 100%;
-      height: min(659px, 169.05vw);
+      height: clamp(640px, 169.05vw, 679px);
       margin-left: auto;
       margin-right: auto;
       position: relative;
@@ -53,7 +53,9 @@
       z-index: 5;
       max-width: 391px;
       width: 100%;
-      height: auto
+      height: 100%;
+      object-fit: cover;
+      object-position: top center
     }
 
     .hero__top {
@@ -62,7 +64,7 @@
       height: 48px;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       position: relative;
       z-index: 11
     }
@@ -149,6 +151,8 @@
       display: block;
       width: 100%;
       max-width: 466px;
+      height: auto;
+      min-height: 375px;
     }
 
     .hero__btn {
@@ -344,6 +348,16 @@
 
     .arrow {
       margin-bottom: 100px
+    }
+
+    @media screen and (max-width: 340px) {
+      .hero {
+        height: 630px
+      }
+
+      .hero__inner__row__bottom {
+        top: 128%
+      }
     }
   </style>
   <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
